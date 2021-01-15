@@ -1,1 +1,10 @@
-# Optimal-strategy-for-inventory-level-
+# Optimal-strategy-for-inventory-level
+In the morning of every day, the manager looks at the remaining inventory (or backlog) of inventory and places an order for items. We will assume that the order arrives immediately and before any demand is realized (it arrives before the store opens). For now, let us assume that the manager follows the policy: order enough items to bring the inventory up to 50. If the inventory is already at or above 50, the manager orders nothing.
+Demand arrives after the order is placed and received. Let Dt be the demand arriving at time t. We will assume that this demand follows a Poisson distribution with mean λ=10.
+If demand is larger than available inventory, the excess orders are backlogged which means that the customer will get the items as soon as more inventory arrives. Thus, inventory can be negative. If the inventory, for example, is ‐3 at the beginning of the day it means that there are three customers to whom we owe items. When the order arrives, the first three items will go to these customers so that‐‐‐under the policy of ordering up to 50‐‐‐the inventory available for the next‐period customers will be 50‐3=47.
+We assume throughout that the inventory cannot go below ‐30. If there are already 30 customers to whom we owe products, any new orders are lost. The inventory, thus, can never go below ‐30.
+
+In the model description we assumed that the manager follows the policy of ordering‐up‐to 50 units but this is not necessarily the optimal thing to do. We are now going to derive the optimal policy.
+    
+To make our life a bit simpler, we will that there is limited space in the warehouse. The manager can never bring the inventory to more than 100 units. The state space is then [‐30,‐29,....,100].
+Suppose that the company pays $c per unit ordered (i.e., if you order 10 units, you pay $10c). The company also pays a capital cost of $h per unit in inventory per period of time (i.e, if there are 20 unit in inventory at the end of a day, the company incurs $20h of inventory costs). Suppose that the company loses $b for each customer that is backlogged per unit of time. So if the inventory is ‐3 at the end of a period, that cost is $3b for that period.
